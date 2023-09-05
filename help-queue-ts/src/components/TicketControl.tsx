@@ -48,7 +48,7 @@ function TicketControl(): JSX.Element {
 
     return <>
         {Object.keys(selectedTicket).length !== 0 ?
-            <TicketDetail ticket={selectedTicket} />
+            <TicketDetail ticket={selectedTicket} deleteTicket={deleteTicket} />
             : formVisibleOnPage ? 
                 <NewTicketForm onsubmit={updateTicketList} />
                 : <TicketList ticketList={mainTicketList} changeSelectedTicket={updateSelectTicket} />
