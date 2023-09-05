@@ -1,35 +1,17 @@
-import { useState } from 'react';
 import Ticket from './Ticket';
+import TicketIF from './interfaces';
 
-interface TicketObj {
-    location: string;
-    names: Array<string>;
-    issue: string;
+interface Props {
+    ticketList: Array<TicketIF>
 }
 
-function TicketList(): JSX.Element {
-    const [ticketList, setTicketList] = useState<TicketObj[]>([
-        {
-            names: ["Thato", "Haley"],
-            location: "3A",
-            issue: "Firebase won't save record. Help."
-        },
-        {
-            names: ["Sleater", "Kinney"],
-            location: "4B",
-            issue: "Prop types are throwing an error."
-        },
-        {
-            names: ["Imani", "Jacob"],
-            location: "9F",
-            issue: "Child component isn't rendering."
-        }]);
+function TicketList(props: Props): JSX.Element {
     return <>
-        {ticketList.map((ticket, index) => <Ticket
+        {props.ticketList.map((ticket) => <Ticket
             names={ticket.names.join(" and ")}
             location={ticket.location}
             issue={ticket.issue}
-            key={index}
+            key={ticket.id}
         />)}
     </> as JSX.Element
 }
