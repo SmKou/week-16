@@ -2,13 +2,16 @@ interface Props {
     location: string;
     names: string;
     issue: string;
+    id: string,
+    clickTicket: (id: string) => void
 }
 
 function Ticket(props: Props): JSX.Element {
-    return <>
+    return <div onClick={ () => props.clickTicket(props.id) }>
         <h3>{props.location} - {props.names}</h3>
         <p><em>{props.issue}</em></p>
-    </> as JSX.Element
+        <hr/>
+    </div> as JSX.Element
 }
 
 export default Ticket;
