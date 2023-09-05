@@ -1,17 +1,31 @@
 import Ticket from './Ticket';
 
+const mainTicketList = [
+    {
+        names: ["Thato", "Haley"],
+        location: "3A",
+        issue: "Firebase won't save record. Help."
+    },
+    {
+        names: ["Sleater", "Kinney"],
+        location: "4B",
+        issue: "Prop types are throwing an error."
+    },
+    {
+        names: ["Imani", "Jacob"],
+        location: "9F",
+        issue: "Child component isn't rendering."
+    }
+]
+
 function TicketList() {
     return <>
-        <Ticket
-            location="3A"
-            names={["Thato", "Haley"]}
-            issue="Firebase will not save record!"
-        />
-        <Ticket
-            location="4B"
-            names={["Sleater", "Kinney"]}
-            issue="Prop types are throwing an error."
-        />
+        {mainTicketList.map((ticket, index) => <Ticket
+            names={ticket.names.join(" and ")}
+            location={ticket.location}
+            issue={ticket.issue}
+            key={index}
+        />)}
     </>
 
 }
