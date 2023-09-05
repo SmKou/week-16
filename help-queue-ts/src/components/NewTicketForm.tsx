@@ -1,3 +1,4 @@
+import ReusableForm from './ReusableForm';
 import { v4 } from 'uuid';
 import TicketIF from './interfaces';
 
@@ -19,12 +20,7 @@ function NewTicketForm(props: Props): JSX.Element {
         } as TicketIF);
     }
 
-    return <form onSubmit={getFormData}>
-        <input type='text' name='names' placeholder='Pair Names' />
-        <input type='text' name='location' placeholder='Location' />
-        <textarea name='issue' placeholder='Describe your issue.' />
-        <input type='submit' value='Help!' />
-    </form> as JSX.Element
+    return <ReusableForm submitFormHandler={getFormData} buttonText={"Help!"} /> as JSX.Element
 }
 
 export default NewTicketForm;
