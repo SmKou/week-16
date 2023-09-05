@@ -15,8 +15,7 @@ function TicketControl(): JSX.Element {
         <button onClick={() => {
             setFormVisible(!formVisibleOnPage);
             updateButtonText(formVisibleOnPage);
-        }
-        }>{ buttonText }</button>
+        }}>{ buttonText }</button>
     </> as JSX.Element;
 }
 
