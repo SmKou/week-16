@@ -2,15 +2,16 @@ import Ticket from './Ticket';
 import TicketIF from './interfaces';
 
 interface Props {
-    ticketList: Array<TicketIF>,
+    ticketList: TicketIF[],
     changeSelectedTicket: (id: string) => void
 }
 
 function TicketList(props: Props): JSX.Element {
+    const { ticketList, changeSelectedTicket } = props;
     return <>
-        {props.ticketList.map((ticket) => <Ticket
-            clickTicket={props.changeSelectedTicket}
-            names={ticket.names.join(" and ")}
+        {ticketList.map((ticket) => <Ticket
+            clickTicket={() => changeSelectedTicket(ticket.id)}
+            names={ticket.names}
             location={ticket.location}
             issue={ticket.issue}
             id={ticket.id}

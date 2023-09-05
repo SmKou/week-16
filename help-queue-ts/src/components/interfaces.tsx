@@ -1,6 +1,6 @@
 export default interface TicketIF {
     location: string;
-    names: Array<string>;
+    names: string[];
     issue: string;
     id: string
 }

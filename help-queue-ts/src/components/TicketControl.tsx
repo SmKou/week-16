@@ -4,29 +4,10 @@ import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 import TicketIF from './interfaces';
 
-/*
-const data = [
-{
-    names: ["Thato", "Haley"],
-    location: "3A",
-    issue: "Firebase won't save record. Help."
-},
-{
-    names: ["Sleater", "Kinney"],
-    location: "4B",
-    issue: "Prop types are throwing an error."
-},
-{
-    names: ["Imani", "Jacob"],
-    location: "9F",
-    issue: "Child component isn't rendering."
-    }];
-*/
-
 function TicketControl(): JSX.Element {
     const [formVisibleOnPage, setFormVisible] = useState(false); 
 
-    const [buttonText, setButtonText] = useState("");
+    const [buttonText, setButtonText] = useState("Add Ticket");
     const updateButtonText = (b: boolean) => setButtonText(b ? "Return to Ticket List" : "Add Ticket")
 
     const [mainTicketList, setTicketList] = useState<TicketIF[]>([])
