@@ -8,13 +8,17 @@ By: Stella Marie
 
 Demo app for creating a help queue in typescript, using hooks and functional components. Consists of CRUD functionality for tickets.
 
-- React TS
-- React@vite TS
-
+- React
+- Svelte
+- SvelteKit
+- Vue
 
 ## Complete Setup
 
-
+- Navigate to project repo
+- Either fork or clone project
+- Install dependencies: ```npm i```
+- Either use ```npm run start``` to run build and launch the dev server, or use ```npm run view``` to run build and launch the preview server
 
 ## Known Bugs
 
