@@ -86,6 +86,26 @@ class ConcreteFactory implements AbstractFactory {
 }
 ```
 
+Refer [Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
+1.  DO NOT: use object types of primitives: Number, String, Boolean, Symbol, Object
+    DO: use primitives: number, string, boolean, symbol
+2.  DO NOT: use generic type without its type parameter
+3.  DO NOT: use any as a type
+    DO: use any if migrating from Javascript to Typescript, or unknown if uncertain
+4.  DO NOT: use any as return type for ignored callback value
+    DO: use void ```() => void```
+5.  DO NOT: use optional parameters in callbacks unless necessary
+```ts
+interface Fetcher {
+    getObj(done: (data: unknown, elapsedTime?: number) => void):void;
+}
+// should be
+interface Fetcher {
+    getObj(done (data: unknown, elapsedTime: number) => void): void;
+}
+```
+Continue reading another time...
+
 ## Complete Setup
 
 - Navigate to project repo
