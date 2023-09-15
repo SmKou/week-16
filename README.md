@@ -1,13 +1,14 @@
-# Week 16 (React)
+# Week 16
 
 By: Stella Marie
 
+Week 16 of Epicodus: Help queue demo project done in different JS frameworks.
+
 ## Description
 
-### Help Queue in TS (React)
+Help queue is a ticket manager for Epicodus students to report issues to their teachers. Consists of CRUD functionality for tickets. Each version of Help Queue is based on the original project modified from the Epicodus lessons on LearnHowToProgram to use Typescript. All other versions from the first are scaffolded using Vite.
 
-Demo app for creating a help queue in typescript, using hooks and functional components. Consists of CRUD functionality for tickets.
-
+**Frameworks**
 - React
 - Svelte
 - SvelteKit
