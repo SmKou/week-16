@@ -1,6 +1,6 @@
-import ReusableForm from "./ReusableForm";
 import { TicketIF } from '../Modules/interfaces';
 import { splitStr } from '../Modules/functions';
+import ReusableForm from "./ReusableForm";
 
 interface Props {
     ticket: TicketIF,
@@ -19,7 +19,7 @@ function EditTicketForm(props: Props) {
         })
     }
 
-    return <ReusableForm submitHandler={getFormData} buttonText="Update Ticket" />
+    return <ReusableForm ticket={ticket}  submitHandler={getFormData} buttonText="Update Ticket" />
 }
 
 export default EditTicketForm;
