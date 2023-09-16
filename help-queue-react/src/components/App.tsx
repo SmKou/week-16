@@ -1,6 +1,6 @@
-import './App.css'
-import Header from './Header'
-import TicketControl from '../containers/TicketControl'
+import './App.css';
+import Header from './Header';
+import TicketControl from '../Containers/TicketControl';
 
 function App() {
     return <>

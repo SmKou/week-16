@@ -1,6 +1,6 @@
 export interface TicketIF {
     location: string,
-    name: string[],
+    names: string[],
     issue: string,
     id: string
 }

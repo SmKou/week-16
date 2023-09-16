@@ -1,6 +1,10 @@
-import { useState } from 'react'
-import TicketIF from '../Modules/interfaces'
-import Buttons from '../components/Buttons'
+import { useState } from 'react';
+import Buttons from '../Components/Buttons';
+import AddTicketForm from '../Components/AddTicketForm';
+import EditTicketForm from '../Components/EditTicketForm';
+import TicketDetail from '../Components/TicketDetail';
+import TicketList from '../Components/TicketList';
+import { TicketIF } from '../Modules/interfaces';
 
 enum Pages {
     Add = 'add',
@@ -26,8 +30,8 @@ function TicketControl() {
     }
     const goToEdit = () => setPage(Pages.Edit)
     const editTicket = (ticket: TicketIF) => {
-        const id = ticketList.indexOf((ticket: TicketIF) => ticket.id === id);
-        ticketList[id] = ticket;
+        const index = ticketList.findIndex(lastTicket => lastTicket.id === ticket.id);
+        ticketList[index] = ticket;
         setSelectedTicket({} as TicketIF);
         setPage(Pages.List);
     }
@@ -47,17 +51,17 @@ function TicketControl() {
     }
 
     switch (page) {
-        case 'add':
+        case Pages.Add:
             return <>
                 <AddTicketForm submitHandler={updateTicketList} />
                 <Buttons buttons={[buttons.List]} />
             </>
-        case 'edit':
+        case Pages.Edit:
             return <>
                 <EditTicketForm ticket={selectedTicket} submitHandler={editTicket} />
                 <Buttons buttons={[ buttons.List, buttons.Add, buttons.Delete ]} />
             </>
-        case 'detail':
+        case Pages.Detail:
             return <>
                 <TicketDetail ticket={selectedTicket} />
                 <Buttons buttons={[ buttons.Add, buttons.Edit, buttons.Delete, buttons.List ]} />
