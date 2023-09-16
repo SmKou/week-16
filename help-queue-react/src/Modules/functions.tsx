@@ -1,0 +1,1 @@
+export const splitStr = (s: string): string[] => s.toString().split(/[\s,]+/)

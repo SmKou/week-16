@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import TicketIF from './Interfaces'
+import TicketIF from '../Modules/interfaces'
 import Buttons from '../components/Buttons'
 
 enum Pages {
@@ -9,7 +9,7 @@ enum Pages {
     List = 'list'
 }
 
-function TicketControl(): JSX.Element { 
+function TicketControl() { 
     const [page, setPage] = useState('');
     const [ticketList, setTicketList] = useState<TicketIF[]>([]);
     const [selectedTicket, setSelectedTicket] = useState<TicketIF>({} as TicketIF);
@@ -51,21 +51,21 @@ function TicketControl(): JSX.Element {
             return <>
                 <AddTicketForm submitHandler={updateTicketList} />
                 <Buttons buttons={[buttons.List]} />
-            </> as JSX.Element
+            </>
         case 'edit':
             return <>
                 <EditTicketForm ticket={selectedTicket} submitHandler={editTicket} />
                 <Buttons buttons={[ buttons.List, buttons.Add, buttons.Delete ]} />
-            </> as JSX.Element
+            </>
         case 'detail':
             return <>
                 <TicketDetail ticket={selectedTicket} />
                 <Buttons buttons={[ buttons.Add, buttons.Edit, buttons.Delete, buttons.List ]} />
-            </> as JSX.Element
+            </>
         default:
             return <>
                 <TicketList ticketList={ticketList} changeTicket={updateSelectedTicket} />
-            </> as JSX.Element
+            </>
     }
 }
 
