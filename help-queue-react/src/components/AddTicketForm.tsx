@@ -1,7 +1,7 @@
-import ReusableForm from "./ReusableForm"
-import { v4 } from 'uuid'
+import { v4 } from 'uuid';
 import { TicketIF } from '../Modules/interfaces'
 import { splitStr } from '../Modules/functions'
+import ReusableForm from "./ReusableForm";
 
 interface Props {
     submitHandler: (ticket: TicketIF) => void

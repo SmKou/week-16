@@ -3,7 +3,7 @@ import { TicketIF } from '../Modules/interfaces';
 import { splitStr } from '../Modules/functions';
 
 interface Props {
-    ticket: TicketIf,
+    ticket: TicketIF,
     submitHandler: (ticket: TicketIF) => void
 }
 
