@@ -4,3 +4,39 @@
   padding: 2rem;
   text-align: center;
 }
+
+header {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.ticket {
+    border-bottom: 0.1rem solid white;
+}
+
+.ticket:first-of-type {
+    border-top: 0.1rem solid white;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0.6rem;
+}
+
+form label { text-align: left }
+
+input[type=submit] {
+    grid-column: span 2;
+}
+
+.buttons-nav {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+}
+
+.buttons-nav button {
+    margin: 0 1rem;
+}

@@ -1,4 +1,4 @@
-import './App.css';
+import '../Assets/App.css';
 import Header from './Header';
 import TicketControl from '../Containers/TicketControl';
 

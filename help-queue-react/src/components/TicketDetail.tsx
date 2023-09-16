@@ -8,10 +8,9 @@ interface Props {
 function TicketDetail(props: Props) {
     const { ticket } = props;
     return <>
-        <h1>Ticket Details</h1>
-        <h3>{ticket.location} - {formStr(ticket.names, " and ")}</h3>
+        <h3>Ticket Details</h3>
+        <p>{ticket.location} - {formStr(ticket.names, " and ")}</p>
         <p><em>{ticket.issue}</em></p>
-        <hr />
     </>
 }
 

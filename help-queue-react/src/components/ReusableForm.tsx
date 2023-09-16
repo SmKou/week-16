@@ -5,8 +5,11 @@ interface Props {
 
 function ReusableForm(props: Props) {
     return <form onSubmit={props.submitHandler}>
-        <input type='text' name='names' placeholder='Pair Names' />
+        <label>Student Names:</label>
+        <input type='text' id='names' name='names' placeholder='Pair Names' />
+        <label>Location:</label>
         <input type='text' name='location' placeholder='Location' />
+        <label>Issue:</label>
         <textarea name='issue' placeholder='Describe your issue.' />
         <input type='submit' value={props.buttonText} />
     </form>

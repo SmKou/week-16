@@ -14,7 +14,7 @@ enum Pages {
 }
 
 function TicketControl() { 
-    const [page, setPage] = useState('');
+    const [page, setPage] = useState(Pages.List);
     const [ticketList, setTicketList] = useState<TicketIF[]>([]);
     const [selectedTicket, setSelectedTicket] = useState<TicketIF>({} as TicketIF);
 
@@ -26,7 +26,7 @@ function TicketControl() {
     const updateSelectedTicket = (id: string) => {
         const ticket = ticketList.filter(ticket => ticket.id === id)[0];
         setSelectedTicket(ticket);
-
+        setPage(Pages.Detail);
     }
     const goToEdit = () => setPage(Pages.Edit)
     const editTicket = (ticket: TicketIF) => {
@@ -69,6 +69,7 @@ function TicketControl() {
         default:
             return <>
                 <TicketList ticketList={ticketList} changeTicket={updateSelectedTicket} />
+                <Buttons buttons={[buttons.Add]} />
             </>
     }
 }
