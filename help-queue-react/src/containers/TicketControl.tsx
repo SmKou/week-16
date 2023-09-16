@@ -68,7 +68,7 @@ function TicketControl() {
             </>
         default:
             return <>
-                <TicketList ticketList={ticketList} changeTicket={updateSelectedTicket} />
+                <TicketList ticketList={ticketList} changeTicket={updateSelectedTicket} delete={deleteTicket} />
                 <Buttons buttons={[buttons.Add]} />
             </>
     }

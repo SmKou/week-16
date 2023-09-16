@@ -1,6 +1,7 @@
 import { v4 } from 'uuid';
-import { TicketIF } from '../Modules/interfaces'
-import { splitStr } from '../Modules/functions'
+import { TicketIF } from '../Modules/interfaces';
+import { splitStr } from '../Modules/functions';
+import { getValidInput } from '../Modules/validation';
 import ReusableForm from "./ReusableForm";
 
 interface Props {
@@ -10,12 +11,13 @@ interface Props {
 function AddTicketForm(props: Props) {
     const getFormData = (e: any) => {
         e.preventDefault();
-        props.submitHandler({
+        const ticket = getValidInput({
             location: e.target.location.value,
             names: splitStr(e.target.names.value),
             issue: e.target.issue.value,
             id: v4()
-        } as TicketIF);
+        });
+        props.submitHandler(ticket);
     }
     return <ReusableForm submitHandler={getFormData} buttonText="Help!" />
 }

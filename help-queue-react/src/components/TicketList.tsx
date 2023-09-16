@@ -3,7 +3,8 @@ import Ticket from './Ticket';
 
 interface Props {
     ticketList: TicketIF[],
-    changeTicket: (id: string) => void
+    changeTicket: (id: string) => void,
+    delete: (id: string) => void
 }
 
 function TicketList(props: Props) {
@@ -11,6 +12,7 @@ function TicketList(props: Props) {
         {props.ticketList.map((ticket: TicketIF) => <Ticket
             key={ticket.id}
             selectTicket={() => props.changeTicket(ticket.id)}
+            deleteTicket={() => props.delete(ticket.id)}
             ticket={{
                 names: ticket.names,
                 location: ticket.location,

@@ -7,15 +7,15 @@
 
 header {
     width: 100%;
-    margin: 2rem 0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.1rem solid white;
 }
 
 .ticket {
     border-bottom: 0.1rem solid white;
-}
-
-.ticket:first-of-type {
-    border-top: 0.1rem solid white;
+    display: grid;
+    grid-template-columns: 1fr 60px;
 }
 
 form {

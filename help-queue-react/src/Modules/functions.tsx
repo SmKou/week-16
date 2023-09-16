@@ -4,7 +4,8 @@ export const makeKey = (s: string): string => s.toLowerCase().split(" ").join(""
 
 const functions = {
     splitStr,
-    formStr
+    formStr,
+    makeKey
 }
 
 export default functions;
