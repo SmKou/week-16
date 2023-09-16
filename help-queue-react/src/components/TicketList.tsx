@@ -9,6 +9,7 @@ interface Props {
 function TicketList(props: Props) {
     return <>
         {props.ticketList.map((ticket: TicketIF) => <Ticket
+            key={ticket.id}
             selectTicket={() => props.changeTicket(ticket.id)}
             ticket={{
                 names: ticket.names,

@@ -11,7 +11,7 @@ interface Props {
 
 function Buttons(props: Props): JSX.Element {
     return <div className="buttons-nav">
-        {props.buttons.map(button => <button id={makeKey(button.text)} onClick={button.action}>{button.text}</button>)}
+        {props.buttons.map(button => <button key={makeKey(button.text)} onClick={button.action}>{button.text}</button>)}
     </div> as JSX.Element
 }
 
